@@ -1,0 +1,4 @@
+service android.se.omapi-service /vendor/bin/hw/android.se.omapi-service
+    class hal
+    user secure_element
+    group secure_element nfc
