@@ -1,6 +1,8 @@
 cc_binary {
-    name: "android.se.omapi-service",
+    name: "android.se-service",
     relative_install_path: "hw",
+    init_rc: ["android.se.omapi-service.rc"],
+    vintf_fragments: ["secure_element-service.xml"],
     vendor: true,
     srcs: [
         "**/*.cpp",
