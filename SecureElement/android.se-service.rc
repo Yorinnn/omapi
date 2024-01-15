@@ -1,0 +1,4 @@
+service android.se-service /vendor/bin/hw/android.se-service
+    class hal
+    user secure_element
+    group secure_element nfc
