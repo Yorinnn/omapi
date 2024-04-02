@@ -1,34 +1,12 @@
-cc_binary {
-    name: "android.se.omapi-service",
-    relative_install_path: "hw",
-    vendor: true,
+package {
+    default_applicable_licenses: ["frameworks_base_license"],
+}
+
+filegroup {
+    name: "framework-omapi-sources",
     srcs: [
         "**/*.cpp",
         "**/*.aidl",
     ],
-
-    shared_libs: [
-        "libbinder_ndk",
-        "android.hardware.secure_element-V1-ndk",
-        "android.se.omapi-V1-ndk"
-        "libbase",
-        "libcutils",
-        "libhardware",
-        "liblog",
-        "libutils",
-    ],
-
-    cflags: [
-        "-DANDROID",
-        "-DENABLE_LOGGING=1",
-        "-DENABLE_DEBUG=1",
-        "-Wno-unused-parameter",
-        "-Wno-unused-private-field",
-        "-Wno-error",
-        "-Wreturn-type",
-    ],
-
-    arch: {
-        arm: { cflags: ["-DST_LIB_32"] },
-    }
+    visibility: ["//frameworks/base"],
 }
